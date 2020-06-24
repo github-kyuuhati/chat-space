@@ -1,0 +1,22 @@
+//①サイドバー
+.Side-bar
+  //①サイドヘッダー
+  .Side-bar__user_name
+    .Side-bar__top
+      .Side-bar__name_icon 
+        %h3.Side-bar__name hoge
+      
+      %ul.Side-bar__icon
+        %li 
+          = link_to "#",class: "Side-bar--btn" do
+            =icon('fas', 'edit')
+        %li
+          = link_to "#",class: "Side-bar--btn" do        
+            = icon('fas', 'cog')
+
+  //②サイドバーメイン
+  .Side-bar__group_list
+    .Side-bar__group
+      .Side-bar__group_message
+        .Side-bar__title techcamp      
+        .Side-bar__message まだメッセージがありません

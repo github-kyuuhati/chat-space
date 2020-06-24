@@ -1,0 +1,41 @@
+//メイン
+.Main
+  //③メインヘッダー
+  .Main__header
+    .Main__title_member
+      .Main__title こんにちは
+      .Main__member 
+        %ul.Main__list  
+          %li Member：
+          %li.Main__user name
+          %li.Main__user name2          
+    =link_to "#",class:"Main__edit--btn" do
+      ="Edit"
+
+  //④チャット画面
+  .Main__chat_space
+    .Main__messagebox
+      .Main__messageinfo
+        .Main__message_name test
+        .Main__message_date 2020年06月23日 14時05分
+      .Main__message  message
+
+    .Main__messagebox
+      .Main__messageinfo
+        .Main__message_name user
+        .Main__message_date 2020年06月23日 16時23分
+      .Main__message  message
+
+
+  //⑤メインフッター
+  .Main__footer
+    %form.Main__formcontents
+      .Main__form
+        %input.Main__form_image{:placeholder => "type a message"}
+          %label{class: "Main__image"}
+            = icon('far', 'image')
+            %input{type: "file"}        
+
+      %input.Main__send--btn{ :type => "submit", :value => "Send"}
+        
+    
