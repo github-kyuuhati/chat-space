@@ -9,7 +9,7 @@
       
       %ul.Side-bar__icon
         %li 
-          = link_to "#",class: "Side-bar--btn" do
+          = link_to new_group_path,class: "Side-bar--btn" do
             =icon('fas', 'edit')
         %li
           = link_to edit_user_path(current_user),class: "Side-bar--btn" do
@@ -18,6 +18,12 @@
   //②サイドバーメイン
   .Side-bar__group_list
     .Side-bar__group
-      .Side-bar__group_message
-        .Side-bar__title techcamp      
-        .Side-bar__message まだメッセージがありません
+      - current_user.groups.each do |group|
+        .Side-bar__group_message
+          = link_to '#' do
+            .Side-bar__title
+              = group.name
+            .Side-bar__message
+              メッセージはまだありません
+
+
