@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="Main__messagebox">
+        `<div class="Main__messagebox" data-message-id=${message.id}>
           <div class="Main__messageinfo">
             <div class="Main__message_name">
               ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
       return html;
     } else {
       let html =
-      `<div class="Main__messagebox">
+      `<div class="Main__messagebox" data-message-id=${message.id}>
         <div class="Main__messageinfo">
           <div class="Main__message_name">
             ${message.user_name}
@@ -72,7 +72,4 @@ $(function(){
   $('.Main__formcontents').click(function() {
     $('input').prop('disabled', false);
   })
-
-
-
 });
